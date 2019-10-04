@@ -4,7 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Page from "./Components/PageStructure/Page";
 
 function App() {
-  return <Page />;
+  return (
+    <div className="content">
+      <Page />
+    </div>
+  );
 }
 
 export default App;

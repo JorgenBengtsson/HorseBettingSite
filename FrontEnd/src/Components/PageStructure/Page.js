@@ -32,7 +32,6 @@ export default class Page extends Component {
           <Registration title="Registration" />
           <Profile title="Profile" />
         </Body>
-        <Footer />
       </div>
     );
   }
