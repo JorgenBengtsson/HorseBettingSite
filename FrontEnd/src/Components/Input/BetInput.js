@@ -4,6 +4,10 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 export default class BetInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedHorse: props.selectedHorse };
+  }
   render() {
     return (
       <Form>
@@ -15,9 +19,15 @@ export default class BetInput extends Component {
 
           <Form.Group as={Col} controlId="formGridState">
             <Form.Label>Horse</Form.Label>
-            <Form.Control as="select">
+            <Form.Control
+              as="select"
+              value={this.props.selectedHorse}
+              onChange={value => this.setState({ selectedHorse: value })}
+            >
               <option>Choose...</option>
-              <option>...</option>
+              <option value="1">1. Lucky Charm</option>
+              <option value="2">2. Ginger Roadster</option>
+              <option value="3">3. Blue Star</option>
             </Form.Control>
           </Form.Group>
 

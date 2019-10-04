@@ -3,6 +3,10 @@ import Table from "react-bootstrap/Table";
 import BetInput from "../../Input/BetInput";
 
 export default class SpecificRaceTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { selectedHorse: 0 };
+  }
   componentDidMount() {
     console.log("Race: " + this.props.raceToShow);
   }
@@ -23,21 +27,21 @@ export default class SpecificRaceTable extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onClick={() => this.setState({ selectedHorse: 1 })}>
               <td>1</td>
               <td>Lucky Charm</td>
               <td>John Stone</td>
               <td>3rd, 2019-09-14</td>
               <td>4:1</td>
             </tr>
-            <tr>
+            <tr onClick={() => this.setState({ selectedHorse: 2 })}>
               <td>2</td>
               <td>Ginger Roadster</td>
               <td>Gordon Scott</td>
               <td>DNF, 2019-09-14</td>
               <td>12:1</td>
             </tr>
-            <tr>
+            <tr onClick={() => this.setState({ selectedHorse: 3 })}>
               <td>3</td>
               <td>Blue Star</td>
               <td>Silvia von Carlton</td>
@@ -46,7 +50,7 @@ export default class SpecificRaceTable extends Component {
             </tr>
           </tbody>
         </Table>
-        <BetInput />
+        <BetInput selectedHorse={this.state.selectedHorse} />
       </>
     );
   }
