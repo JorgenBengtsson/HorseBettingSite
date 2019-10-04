@@ -9,6 +9,6 @@ export default class Body extends Component {
         childToDisplay = child;
       }
     });
-    return <div>{childToDisplay}</div>;
+    return <div className="pageContent">{childToDisplay}</div>;
   }
 }
