@@ -50,7 +50,10 @@ export default class SpecificRaceTable extends Component {
             </tr>
           </tbody>
         </Table>
-        <BetInput selectedHorse={this.state.selectedHorse} />
+        <BetInput
+          selectedHorse={this.state.selectedHorse}
+          onChangeSelectedHorse={id => this.setState({ selectedHorse: id })}
+        />
       </>
     );
   }

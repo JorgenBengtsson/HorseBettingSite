@@ -4,10 +4,6 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 export default class BetInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { selectedHorse: props.selectedHorse };
-  }
   render() {
     return (
       <Form>
@@ -22,7 +18,9 @@ export default class BetInput extends Component {
             <Form.Control
               as="select"
               value={this.props.selectedHorse}
-              onChange={value => this.setState({ selectedHorse: value })}
+              onChange={event =>
+                this.props.onChangeSelectedHorse(event.target.value)
+              }
             >
               <option>Choose...</option>
               <option value="1">1. Lucky Charm</option>

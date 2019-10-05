@@ -6,15 +6,21 @@ import SpecificRaceTable from "./SpecificRaceTable";
 export default class Races extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedRace: 0 };
+    this.state = { displayRaceTable: false, selectedRace: 0 };
   }
   render() {
     return (
       <>
         <MainRacesTable
-          selectedRace={id => this.setState({ selectedRace: id })}
+          selectedRace={id =>
+            this.setState({ displayRaceTable: true, selectedRace: id })
+          }
         />
-        <SpecificRaceTable raceToShow={this.state.selectedRace} />
+        {this.state.displayRaceTable ? (
+          <SpecificRaceTable raceToShow={this.state.selectedRace} />
+        ) : (
+          <></>
+        )}
       </>
     );
   }
