@@ -164,7 +164,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\HorsesController.cs" />
+    <Compile Include="Controllers\RacesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,6 +187,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HorseBetting.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\HorseViewModel.cs" />
     <Compile Include="Models\jockey.cs">
       <DependentUpon>HorseBetting.tt</DependentUpon>
     </Compile>
@@ -201,6 +203,7 @@
     <Compile Include="Models\racehorse.cs">
       <DependentUpon>HorseBetting.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RaceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

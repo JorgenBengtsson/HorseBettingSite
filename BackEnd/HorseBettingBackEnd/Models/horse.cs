@@ -26,6 +26,6 @@ namespace HorseBettingBackEnd.Models
     
         public virtual owner owner { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<racehorse> racehorses { get; set; }
+        public virtual ICollection<racehorse> racehorses { internal get; set; }
     }
 }

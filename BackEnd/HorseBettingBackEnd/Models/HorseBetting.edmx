@@ -156,7 +156,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ownerid" Type="Int32" Nullable="false" />
           <NavigationProperty Name="owner" Relationship="Self.FK_horse_owner" FromRole="horse" ToRole="owner" />
-          <NavigationProperty Name="racehorses" Relationship="Self.FK_racehorse_horse" FromRole="horse" ToRole="racehorse" />
+          <NavigationProperty Name="racehorses" Relationship="Self.FK_racehorse_horse" FromRole="horse" ToRole="racehorse" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="jockey">
           <Key>
@@ -164,7 +164,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="racehorses" Relationship="Self.FK_racehorse_jockey" FromRole="jockey" ToRole="racehorse" />
+          <NavigationProperty Name="racehorses" Relationship="Self.FK_racehorse_jockey" FromRole="jockey" ToRole="racehorse" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="location">
           <Key>
@@ -172,7 +172,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="races" Relationship="Self.FK_race_location" FromRole="location" ToRole="race" />
+          <NavigationProperty Name="races" Relationship="Self.FK_race_location" FromRole="location" ToRole="race" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="owner">
           <Key>
@@ -182,7 +182,7 @@
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="horses" Relationship="Self.FK_horse_owner" FromRole="owner" ToRole="horse" />
+          <NavigationProperty Name="horses" Relationship="Self.FK_horse_owner" FromRole="owner" ToRole="horse" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <EntityType Name="race">
           <Key>
@@ -206,7 +206,7 @@
           <Property Name="position" Type="Int32" />
           <NavigationProperty Name="horse" Relationship="Self.FK_racehorse_horse" FromRole="racehorse" ToRole="horse" />
           <NavigationProperty Name="jockey" Relationship="Self.FK_racehorse_jockey" FromRole="racehorse" ToRole="jockey" />
-          <NavigationProperty Name="race" Relationship="Self.FK_racehorse_race" FromRole="racehorse" ToRole="race" />
+          <NavigationProperty Name="race" Relationship="Self.FK_racehorse_race" FromRole="racehorse" ToRole="race" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         </EntityType>
         <Association Name="FK_horse_owner">
           <End Role="owner" Type="Self.owner" Multiplicity="1" />
@@ -268,7 +268,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HorseBettingSiteEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HorseBettingSiteEntities" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="horses" EntityType="Self.horse" />
           <EntitySet Name="jockeys" EntityType="Self.jockey" />
           <EntitySet Name="locations" EntityType="Self.location" />

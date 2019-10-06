@@ -26,6 +26,6 @@ namespace HorseBettingBackEnd.Models
         public string phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<horse> horses { get; set; }
+        public virtual ICollection<horse> horses { internal get; set; }
     }
 }

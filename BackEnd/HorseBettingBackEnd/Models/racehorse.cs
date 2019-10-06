@@ -23,6 +23,6 @@ namespace HorseBettingBackEnd.Models
     
         public virtual horse horse { get; set; }
         public virtual jockey jockey { get; set; }
-        public virtual race race { get; set; }
+        public virtual race race { internal get; set; }
     }
 }

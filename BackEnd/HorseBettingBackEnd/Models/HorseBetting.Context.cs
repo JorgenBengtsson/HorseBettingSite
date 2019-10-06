@@ -18,6 +18,7 @@ namespace HorseBettingBackEnd.Models
         public HorseBettingSiteEntities()
             : base("name=HorseBettingSiteEntities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
